@@ -215,7 +215,7 @@ class Semester extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function editCourseInfo($section_id, $sem)
+	public function editCourseInfo($section_id = NULL, $sem = NULL)
 	{
 		if(!$this->session->userdata('logged_in')){
 			redirect('login');
