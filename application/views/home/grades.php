@@ -3,7 +3,7 @@
 		<h2><?= $tab ?></h2>
 		<ol class="breadcrumb">
 			<li>
-				<?php echo form_open('home/schedule', array('id' => 'changeSem', 'onchange' => 'setSem()')); ?>
+				<?php echo form_open('home/grades', array('id' => 'changeSem', 'onchange' => 'setSem()')); ?>
 				<select class="form-control" name="sy">
 					<?php foreach ($semesters as $s) { ?>
 					<option value="<?= $s['sem_id'] ?>" <?php if($s['sem_id'] == $sem){echo 'selected';} ?> ><?= $s['sem_name'] ?></option>

@@ -1,0 +1,11 @@
+﻿ADMIN
+user: admin
+pass: admin
+
+FACULTY
+user: FAC0001, FAC0002
+pass: cethub
+
+STUDENT
+user: 14-0001 - 14-004, 14-1249
+pass: cethub

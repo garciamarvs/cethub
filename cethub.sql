@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 03:42 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Jun 15, 2019 at 03:13 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -99,9 +101,9 @@ INSERT INTO `course` (`id`, `course_id`, `course_title`, `course_code`, `units`,
 (8, 0, 'Physics for Computers', 'PHY 011B', '5', '', '', '', 3, 1),
 (9, 0, 'Analytic Geometry', 'MTH 014B', '3', '', '', '', 3, 1),
 (10, 0, 'Physical Education 3', 'PE 013', '2', '', '', '', 3, 1),
-(11, 0, 'Data Communication & Basic Network Concepts', 'ACS 311', '3', '', '', '', 8, 1),
-(12, 0, 'DataBase Management Systems 2', 'ACS 312', '3', '', '', '', 8, 1),
-(13, 0, 'Multimedia Technology I', 'ACS 313', '3', '', '', '', 8, 1),
+(11, 0, 'Data Communication & Basic Network Concepts', 'ACS 311', '3', '', '', '17', 8, 1),
+(12, 0, 'DataBase Management Systems 2', 'ACS 312', '3', '', '', '17', 8, 1),
+(13, 0, 'Multimedia Technology I', 'ACS 313', '3', '', '', '17', 8, 1),
 (14, 0, 'Object Oriented Programming', 'ACS 314', '3', '', '', '', 8, 1),
 (15, 0, 'System Analysis & Design', 'ACS 315', '3', '', '', '', 8, 1),
 (16, 0, 'Computer systems Organization & Assembly Language', 'ACS 316', '3', '', '', '', 8, 1),
@@ -140,9 +142,9 @@ INSERT INTO `course` (`id`, `course_id`, `course_title`, `course_code`, `units`,
 (49, 0, 'Service Culture', 'ACS 222', '3', '', '', '', 3, 2),
 (50, 0, 'Digital & Logic Circuits', 'SCU 101', '3', '', '', '', 3, 2),
 (51, 0, 'Physical Fitness IV', 'PE 014', '2', 'S 7:00-8:00', '', '16', 3, 2),
-(52, 0, 'Advanced Computer Networking', 'ACS 321', '3', '', '', '', 8, 2),
-(53, 0, 'Computer Architecture', 'BIT 321', '3', '', '', '', 8, 2),
-(54, 0, 'Project Management', 'BIT 322', '3', '', '', '', 8, 2),
+(52, 0, 'Advanced Computer Networking', 'ACS 321', '3', '', '', '16', 8, 2),
+(53, 0, 'Computer Architecture', 'BIT 321', '3', '', '', '16', 8, 2),
+(54, 0, 'Project Management', 'BIT 322', '3', '', '', '16', 8, 2),
 (55, 0, 'Web Application Design 2', 'ACS 323', '3', '', '', '', 8, 2),
 (56, 0, 'Multimedia Technology 2 (3D software)', 'BIT 323', '3', '', '', '', 8, 2),
 (57, 0, 'Business Process2 (Fund.of Business Process Outsourcing 2)', 'BPO 102', '3', '', '', '', 8, 2),
@@ -182,12 +184,42 @@ INSERT INTO `course_log` (`id`, `course`, `student`, `grade`, `npe`, `ope`, `le`
 (1, 41, 14, 96, '3.75', '1.25', 'A', 'PASSED'),
 (2, 41, 2, 95, '3.75', '1.25', 'A', 'PASSED'),
 (3, 41, 15, 75, '2.00', '3.00', 'C-', 'PASSED'),
-(4, 42, 14, 0, '', '', '', ''),
+(4, 42, 14, 71, '1.00', '5.00', 'D', 'FAILED'),
 (5, 42, 2, 90, '3.25', '1.75', 'B+', 'PASSED'),
-(6, 42, 15, 0, '', '', '', ''),
-(7, 43, 14, 0, '', '', '', ''),
+(6, 42, 15, 72, '1.00', '5.00', 'D', 'FAILED'),
+(7, 43, 14, 88, '3.00', '2.00', 'B', 'PASSED'),
 (8, 43, 2, 89, '3.25', '1.75', 'B+', 'PASSED'),
-(9, 43, 15, 0, '', '', '', '');
+(9, 43, 15, 87, '3.00', '2.00', 'B', 'PASSED'),
+(15, 11, 14, 75, '2.00', '3.00', 'C-', 'PASSED'),
+(16, 11, 2, 76, '2.25', '2.75', 'C', 'PASSED'),
+(17, 11, 15, 77, '2.25', '2.75', 'C', 'PASSED'),
+(18, 11, 12, 78, '2.25', '2.75', 'C', 'PASSED'),
+(19, 11, 13, 79, '2.50', '2.50', 'C+', 'PASSED'),
+(20, 12, 14, 81, '2.50', '2.50', 'C+', 'PASSED'),
+(21, 12, 2, 82, '2.50', '2.50', 'C+', 'PASSED'),
+(22, 12, 15, 83, '2.75', '2.25', 'B-', 'PASSED'),
+(23, 12, 12, 84, '2.75', '2.25', 'B-', 'PASSED'),
+(24, 12, 13, 85, '2.75', '2.25', 'B-', 'PASSED'),
+(25, 13, 14, 86, '3.00', '2.00', 'B', 'PASSED'),
+(26, 13, 2, 87, '3.00', '2.00', 'B', 'PASSED'),
+(27, 13, 15, 88, '3.00', '2.00', 'B', 'PASSED'),
+(28, 13, 12, 89, '3.25', '1.75', 'B+', 'PASSED'),
+(29, 13, 13, 90, '3.25', '1.75', 'B+', 'PASSED'),
+(30, 52, 14, 90, '3.25', '1.75', 'B+', 'PASSED'),
+(31, 52, 2, 91, '3.25', '1.75', 'B+', 'PASSED'),
+(32, 52, 15, 92, '3.50', '1.50', 'A-', 'PASSED'),
+(33, 52, 12, 93, '3.50', '1.50', 'A-', 'PASSED'),
+(34, 52, 13, 94, '3.50', '1.50', 'A-', 'PASSED'),
+(35, 53, 14, 75, '2.00', '3.00', 'C-', 'PASSED'),
+(36, 53, 2, 76, '2.25', '2.75', 'C', 'PASSED'),
+(37, 53, 15, 77, '2.25', '2.75', 'C', 'PASSED'),
+(38, 53, 12, 78, '2.25', '2.75', 'C', 'PASSED'),
+(39, 53, 13, 79, '2.50', '2.50', 'C+', 'PASSED'),
+(40, 54, 14, 79, '2.50', '2.50', 'C+', 'PASSED'),
+(41, 54, 2, 80, '2.50', '2.50', 'C+', 'PASSED'),
+(42, 54, 15, 81, '2.50', '2.50', 'C+', 'PASSED'),
+(43, 54, 12, 82, '2.50', '2.50', 'C+', 'PASSED'),
+(44, 54, 13, 83, '2.75', '2.25', 'B-', 'PASSED');
 
 -- --------------------------------------------------------
 
@@ -418,41 +450,50 @@ ALTER TABLE `users`
 --
 ALTER TABLE `announcement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `chat_log`
 --
 ALTER TABLE `chat_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
 --
 -- AUTO_INCREMENT for table `course_log`
 --
 ALTER TABLE `course_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
 --
 -- AUTO_INCREMENT for table `ref_course`
 --
 ALTER TABLE `ref_course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
 --
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
   MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT for table `semester`
 --
 ALTER TABLE `semester`
   MODIFY `sem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
