@@ -8475,7 +8475,7 @@ body.md-skin {
   #page-wrapper {
     position: inherit;
     margin: 0 0 0 220px;
-    min-height: 850px;
+    min-height: 100vh;
   }
   .navbar-static-side {
     z-index: 2001;
@@ -8492,7 +8492,7 @@ body.md-skin {
   #page-wrapper {
     position: inherit;
     margin: 0 0 0 0;
-    min-height: 950px;
+    min-height: 100vh;
   }
   .chat-up {
     width: 40px !important;
